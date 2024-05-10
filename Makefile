@@ -44,6 +44,9 @@ endif
 deploy:
 	@forge script script/DeployRaffle.s.sol:DeployRaffle $(NETWORK_ARGS)
 
+deploy-sepolia:
+	@forge script script/DeployRaffle.s.sol --rpc-url $(SEPOLIA_RPC_URL) --broadcast --account sepolia1 --verify --etherscan-api-key $(ETHERSCAN_API_KEY) -vvvv
+
 createSubscription:
 	@forge script script/Interactions.s.sol:CreateSubscription $(NETWORK_ARGS)
 
